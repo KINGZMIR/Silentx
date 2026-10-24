@@ -1,0 +1,25 @@
+name: Build Dylib
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Theos Environment
+        uses: ./
+        with:
+          theos-sdks: 'https://github.com'
+
+      - name: Compile Project
+        run: |
+          make package FINALPACKAGE=1
+
+      - name: Upload Compiled Dylib
+        uses: actions/upload-artifact@v4
+        with:
+          name: SilentX-Dylib
+          path: .theos/obj/debug/SilentX.dylib
