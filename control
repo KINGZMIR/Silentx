@@ -1,0 +1,8 @@
+Package: com.kingzmir.silentx
+Name: SilentX
+Depends: mobilesubstrate
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: Custom Dark UI Theme for Roblox
+Author: KINGZMIR
+Section: Tweaks
