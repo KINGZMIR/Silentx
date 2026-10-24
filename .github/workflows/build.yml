@@ -16,10 +16,10 @@ jobs:
 
       - name: Compile Project
         run: |
-          make package FINALPACKAGE=1
+          make FINALPACKAGE=1
 
       - name: Upload Compiled Dylib
         uses: actions/upload-artifact@v4
         with:
-          name: SilentX-Dylib
-          path: .theos/obj/debug/SilentX.dylib
+          name: SilentX-Raw-File
+          path: .theos/obj/SilentX.dylib
